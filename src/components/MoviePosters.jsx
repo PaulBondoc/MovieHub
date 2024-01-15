@@ -9,7 +9,6 @@ const MoviePosters = ({ id }) => {
     const getMoviePosters = async () => {
       const fetchedData = await fetchMoviePosters(id);
       setMoviePosters(fetchedData);
-      console.log(fetchedData);
     };
 
     getMoviePosters();
@@ -21,17 +20,21 @@ const MoviePosters = ({ id }) => {
         Movie Posters
       </h1>
       <div className="flex gap-7 px-5 md:px-10 py-[20px] overflow-auto  overflow-y-hidden ">
-        {moviePosters.map((poster) => (
+        {moviePosters.map((poster, index) => (
           <div className="flex-shrink-0 text-white">
             <div className="w-[175px]">
               {poster.file_path ? (
                 <img
+                  key={index}
                   src={`${IMG_BASE_URL}${poster.file_path}`}
                   className="w-full h-[250px] rounded-[10px] hover:rotate-6 hover:scale-110 transition-all"
                   loading="lazy"
                 />
               ) : (
-                <div className="w-full h-[250px] bg-secondary flex items-center justify-center rounded-[10px]  hover:rotate-6 hover:scale-110 transition-all">
+                <div
+                  key={index}
+                  className="w-full h-[250px] bg-secondary flex items-center justify-center rounded-[10px]  hover:rotate-6 hover:scale-110 transition-all"
+                >
                   <p className="text-white font-medium text-[20px]">N/A</p>
                 </div>
               )}

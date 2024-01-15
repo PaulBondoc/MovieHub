@@ -168,7 +168,7 @@ export const fetchMoviePosters = async (id) => {
       `${API_URL}/movie/${id}/images?api_key=${API_KEY}&limit=20`
     );
 
-    return data.posters.slice(0, 20);
+    return data.posters?.slice(0, 20);
   } catch (error) {
     console.error("Error fetching movie posters:", error);
   }

@@ -26,7 +26,7 @@ const SimilarMovies = ({ id }) => {
               id={movie.id}
               poster={movie.poster_path}
               title={movie.title}
-              releaseYear={movie.release_date.slice(0, 4)}
+              releaseYear={movie.release_date?.slice(0, 4)}
               rating={movie.vote_average}
             />
           ))}
