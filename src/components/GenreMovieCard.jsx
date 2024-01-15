@@ -22,7 +22,7 @@ const GenreMovieCard = ({ poster, title, releaseYear, rating, count, id }) => {
                 loading="lazy"
               />
             ) : (
-              <div className="w-full h-[300px] bg-secondary flex items-center justify-center rounded-[10px]  hover:rotate-6 hover:scale-110 transition-all">
+              <div className="w-full h-[190px] xxs:h-[250px] sm:h-[270px] md:h-[300px] bg-secondary flex items-center justify-center rounded-[10px]  hover:rotate-6 hover:scale-110 transition-all">
                 <p className="text-white font-medium text-[20px]">N/A</p>
               </div>
             )}
